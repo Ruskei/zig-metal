@@ -66,7 +66,7 @@ pub const NSApplication = opaque {
         const ti = @typeInfo(@TypeOf(del));
 
         const DelegateType: type = switch (ti) {
-            .Pointer => |ptr| ptr.child,
+            .pointer => |ptr| ptr.child,
             else => {
                 @compileError("'del' should be a pointer!");
             },
